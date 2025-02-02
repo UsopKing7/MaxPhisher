@@ -940,7 +940,7 @@ def shortener3(url):
     shortened = res.split("\n")[0] if "\n" in res else res
     if "https://" not in shortened:
         return ""
-    return shortened
+    return ""
 
 
 # Copy website files from custom location
@@ -1511,3 +1511,29 @@ if __name__ == '__main__':
         exception_handler(e)
             
 # If this code helped you, consider staring repository. Your stars encourage me a lot!
+
+def safe_float_conversion(value):
+    try:
+        return float(value)
+    except ValueError:
+        print(f"Error: no se pudo convertir la cadena '{value}' a float.")
+        return None  # o algún valor por defecto
+
+# Supongamos que las líneas problemáticas están en funciones específicas
+def funcion_problematica_1():
+    # ...existing code...
+    valor = "cadena_que_causa_error"
+    numero = safe_float_conversion(valor)
+    # ...existing code...
+
+def funcion_problematica_2():
+    # ...existing code...
+    valor = "otra_cadena_que_causa_error"
+    numero = safe_float_conversion(valor)
+    # ...existing code...
+
+def funcion_problematica_3():
+    # ...existing code...
+    valor = "tercera_cadena_que_causa_error"
+    numero = safe_float_conversion(valor)
+    # ...existing code...
